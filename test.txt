@@ -1,0 +1,8 @@
+./Examples/Monocular/mono_tum Vocabulary/ORBvoc.txt Examples/Monocular/TUMX.yaml ./Data/rgbd_dataset_freiburg1_rpy
+
+
+
+./myvideo
+
+
+./myslam

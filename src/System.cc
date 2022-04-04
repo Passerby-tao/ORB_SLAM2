@@ -122,17 +122,17 @@ System::System(const string &strVocFile, const string &strSettingsFile, const eS
     if(bUseViewer)
     {
         char SaveImg;
-        cout << "Do you want to save images from the viewer?(y/n)" << endl;
-        cin >> SaveImg;
+        //cout << "Do you want to save images from the viewer?(y/n)" << endl;
+        //cin >> SaveImg;
         
         mpViewer = new Viewer(this, mpFrameDrawer,mpMapDrawer,mpTracker,strSettingsFile);
         mptViewer = new thread(&Viewer::Run, mpViewer);
         mpTracker->SetViewer(mpViewer);
         
-        if(SaveImg == 'Y' || SaveImg == 'y'){  
+        /*if(SaveImg == 'Y' || SaveImg == 'y'){  
             mpViewer->mbSaveImg = true;
             cout << "I'll save these images under the directiry of: '/$(HOME)/Pictures/ORB-SLAM2/'  or  '/$(HOME)/Pictures/ORB-SLAM2-IMU/'" << endl;
-        }
+        }*/
     }
 
     // Choose to use pure localization mode
@@ -142,6 +142,7 @@ System::System(const string &strVocFile, const string &strSettingsFile, const eS
     if(IsPureLocalization == 'Y' || IsPureLocalization == 'y'){  
         ActivateLocalizationMode();
     }
+    
 
     //Load map
     char IsLoadMap;
@@ -164,6 +165,7 @@ System::System(const string &strVocFile, const string &strSettingsFile, const eS
     if(IsLoadMap == 'Y' || IsLoadMap == 'y'){  
         mpMap->Load(strPathMap, mySystemSetting, mpKeyFrameDatabase);
     }
+
 
     //Set pointers between threads
     mpTracker->SetLocalMapper(mpLocalMapper);
