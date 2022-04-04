@@ -1,6 +1,7 @@
 #include "InitKeyFrame.h"
 #include <opencv2/opencv.hpp>
 #include "SystemSetting.h"
+#include <unistd.h>  
 
 namespace ORB_SLAM2
 {
