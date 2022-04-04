@@ -122,3 +122,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Vocabulary)
 add_executable(bin_vocabulary Vocabulary/bin_vocabulary.cpp)
 target_link_libraries(bin_vocabulary ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so ${OpenCV_LIBS})
 
+#create document using Camera
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
+add_executable(myslam myslam.cpp)
+target_link_libraries(myslam ${PROJECT_NAME})
+
+#create myvideo.mp4 document
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
+add_executable(myvideo myvideo.cpp)
+target_link_libraries(myvideo ${PROJECT_NAME})

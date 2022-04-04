@@ -1,0 +1,57 @@
+%YAML:1.0
+
+#−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+# Paramtres de la camra . Ajustez−les!
+#−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+# Paramtres de la matrice de la camra (OpenCV)
+Camera.fx: 500.0
+Camera.fy: 500.0
+Camera.cx: 320.0
+Camera.cy: 240.0
+ 
+Camera.k1: 0
+Camera.k2: 0
+Camera.p1: 0
+Camera.p2: 0
+Camera.k3: 0
+
+# Frquence de frames de camra
+Camera.fps: 30.0
+
+# Ordre des couleurs des images (0: BGR, 1: RGB. Il est ignor si les images sont en niveaux de gris )
+Camera.RGB: 0
+
+#−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+# ORB Parameters
+#−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+
+# ORB Extractor: Nombre de fonctionnalits par image
+ORBextractor.nFeatures: 1000
+
+# ORB Extractor: Facteur dchelle entre les niveaux de la pyramide dchelle
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Nombre de niveaux dans la pyramide chelle
+ORBextractor.nLevels: 8
+
+# Extracteur ORB: Seuil rapide
+# Limage est divise en grille . A chaque cellule FAST sont extraits imposant une reponse minimale.
+# Tout dabord nous imposons iniThFAST. Si aucun coin nest dtect , nous imposons une valeur infrieure minThFAST
+# Vous pouvez abaisser ces valeurs si vos images ont un faible contraste
+ORBextractor.iniThFAST: 10
+ORBextractor.minThFAST: 5
+
+#−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+# Paramtres de la visionneuse
+#−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+
