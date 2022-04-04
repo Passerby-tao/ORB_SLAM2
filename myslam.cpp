@@ -34,15 +34,13 @@ int main(int argc, char **argv) {
 			SLAM.TrackMonocular(frame, double(timestamp.count())/1000.0);
 	}
 	
-    	// save map
+	    
+    	// Save customized Map
     	char IsSaveMap;  
-    	cout << "Do you want to save the map?(Y/N)" << endl;  
+    	cout << "Do you want to save the map?(y/n)" << endl;  
     	cin >> IsSaveMap;  
     	if(IsSaveMap == 'Y' || IsSaveMap == 'y')  
-        	SLAM.SaveMap("/home/lintao/ORB_SLAM2/map.bin");
-        	
-        std::cout << "Press ENTER to close..."; 
-    	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        	SLAM.SaveMap("MySlam.bin");
         
 	
 	return 0;

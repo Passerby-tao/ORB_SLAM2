@@ -29,6 +29,16 @@ while (1) {
 		SLAM.TrackMonocular(frame_resized, double(timestamp.count())/1000.0);
 		cv::waitKey(30);
 	}
+	
+	    
+    	// Save customized Map
+    	char IsSaveMap;  
+    	cout << "Do you want to save the map?(y/n)" << endl;  
+    	cin >> IsSaveMap;  
+    	if(IsSaveMap == 'Y' || IsSaveMap == 'y')  
+        	SLAM.SaveMap("MyVideo.bin");
+        
+        
 	SLAM.Shutdown();
 	return 0;
 }
