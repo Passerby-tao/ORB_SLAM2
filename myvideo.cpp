@@ -31,12 +31,15 @@ while (1) {
 	}
 	
 	    
-    	// Save customized Map
-    	char IsSaveMap;  
-    	cout << "Do you want to save the map?(y/n)" << endl;  
-    	cin >> IsSaveMap;  
-    	if(IsSaveMap == 'Y' || IsSaveMap == 'y')  
-        	SLAM.SaveMap("MyVideo.bin");
+    // Save customized Map
+    char IsSaveMap;  
+    cout << "Do you want to save the map?(y/n)" << endl;  
+    cin >> IsSaveMap;  
+    if(IsSaveMap == 'Y' || IsSaveMap == 'y')  
+        SLAM.SaveMap("MapPointandKeyFrame.bin");
+        
+    // Save camera trajectory
+    SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
         
         
 	SLAM.Shutdown();

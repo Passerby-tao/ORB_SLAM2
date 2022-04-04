@@ -31,16 +31,23 @@ int main(int argc, char **argv) {
 			cap >> frame; // Lire les donnes de la camra
 			auto now = chrono::system_clock::now();
 			auto timestamp = chrono::duration_cast<chrono::milliseconds>(now - start);
+			cout << "time :" << double(timestamp.count())/1000.0 << endl;
+			if(double(timestamp.count())/1000.0 > 100){
+				cout << "100s Time up! Time to save."<<endl;
+				break;}
 			SLAM.TrackMonocular(frame, double(timestamp.count())/1000.0);
 	}
 	
 	    
-    	// Save customized Map
-    	char IsSaveMap;  
-    	cout << "Do you want to save the map?(y/n)" << endl;  
-    	cin >> IsSaveMap;  
-    	if(IsSaveMap == 'Y' || IsSaveMap == 'y')  
-        	SLAM.SaveMap("MySlam.bin");
+    // Save customized Map
+    char IsSaveMap;  
+    cout << "Do you want to save the map?(y/n)" << endl;  
+    cin >> IsSaveMap;  
+    if(IsSaveMap == 'Y' || IsSaveMap == 'y')  
+        SLAM.SaveMap("MapPointandKeyFrame.bin");
+        
+    // Save camera trajectory
+    SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
         
 	
 	return 0;
