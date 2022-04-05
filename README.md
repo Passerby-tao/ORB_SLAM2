@@ -1,3 +1,7 @@
+# Manual
+Please consult our manual, which contains the installation of Linux virtual machine, dependencies, and ORB SLAM2, and some tips to run it.
+https://meng-lili.gitbook.io/simple-start-with-orb-slam2-1/
+
 # ORB-SLAM2
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
 
@@ -247,25 +251,3 @@ You can load ORB vocabulary in either text or binary format. The format is deter
 `bin_vocabulary` will convert `./ORBvoc.txt` to `./ORBvoc.bin` and you can use the new `ORBvoc.bin` as  `PATH_TO_VOCABULARY`  wherever needed.
 
 PS: binary format is loaded faster and text format is more human-readable.
-
-# 11. Saving and Loading Map (My Developement)
-Based on tutorials on the internet, I edited several files in the `include` folder and the `src` folder. Then I edited `Examples/Monocular/mono_kitti.cc` file, and use `KITTI dataset 08` as my debugging exmaple.
-
-Now, saving and loading function may already work for stereo camera and monocular camera for KITTI dataset. I'm not planning to test other dataset. You are always welcome to right a pull request.
-
-In our lab, we are using a popular stereo camera called ZED camera, so I build a my own `stereo_zed.cc` and the corresponding `yaml` file.
-
-### Notice!!!!
-Errors like `addVertex：FATAL` still exist. Other errors may hide themselves somewhere else. I'm still maintaining this code, so please let me know if you find a solution.
-
-### Example Command
-```
-cd ~/$XXXX$/ORB_SLAM2
-./Examples/Stereo/stereo_kitti Vocabulary/ORBvoc.txt Examples/Stereo/KITTI04-12.yaml /$XXXX$/KITTI/dataset/sequences/08
-```
-
-### Save Map
-When you are asked `Do you want to save the map?(y/n)`. Just type in `y` or `Y` then hit `enter` to save a map. A binary file named `MapPointandKeyFrame.bin` would be saved under the `ORB SLAM2` directory.
-
-### Load Map
-After all images are processed, command line will show `Do you want to save the map?(y/n)`, Just type in `y` or `Y` then hit `enter` to load a map. The program will load a binary file named `MapPointandKeyFrame.bin` automatically.
